@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test eventMixin</title>
+</head>
+<body>
+	<script src="../eventMixin.js"></script>
+
+	<script type="text/javascript">
+		const evt = new Event()
+
+		const handler1 = function () {
+			console.log('1')
+		}
+
+		const handler2 = function () {
+			console.log('2')
+		}
+
+		const handler3 = function () {
+			console.log('3')
+		}
+
+		evt.on('start', handler1)
+		evt.once('start', handler2)
+		evt.on('start', handler3)
+
+		evt.emit('start')
+	</script>
+</body>
+</html>
